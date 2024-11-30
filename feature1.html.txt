@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Collage Maker</title>
+    <link rel="stylesheet" href="noma1.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Collage Maker</h1>
+
+        <!-- Image Gallery for Selection -->
+        <div id="imageGallery">
+            <h2>Select Images for Collage (Max 5)</h2>
+            <div class="gallery-grid">
+                <img src="https://wallpapers.com/images/hd/one-piece-pictures-bjm9tdff9yzguoup.jpg" alt="Image 1" class="gallery-image">
+                <img src="https://wallpapers.com/images/hd/anime-pictures-bj226rrdwe326upu.jpg" alt="Image 2" class="gallery-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnNyMK68w6-5GNXUKZhfHxmfg1kZKr66tqFA&s" alt="Image 3" class="gallery-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO206uFXZI7yy7aD2PFuGVI1DyPcQTN7e6Mg&s" alt="Image 4" class="gallery-image">
+                <img src="https://via.placeholder.com/150/F0F033" alt="Image 5" class="gallery-image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ6IwVKF9gHIocGbr9peFbdTngSAEjn4XiEQ&s" alt="Image 6" class="gallery-image">
+            </div>
+        </div>
+
+        <!-- Button to Create Collage -->
+        <button id="createCollageButton">Create Collage</button>
+
+        <!-- Collage Display -->
+        <div id="collageContainer"></div>
+    </div>
+
+    <script src="noma2.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Grid with Actions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+        }
+        .image-card {
+            position: relative;
+        }
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .actions {
+            display: none;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .image-card:hover .actions {
+            display: block;
+        }
+        .button {
+            margin: 2px 5px;
+            padding: 5px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .button.delete {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Image Grid</h1>
+    <div class="grid-container" id="grid-container">
+        <!-- Images will be dynamically added here -->
+    </div>
+
+    <script>
+        const images = [
+            'https://via.placeholder.com/150',
+            'https://via.placeholder.com/150/FF0000',
+            'https://via.placeholder.com/150/00FF00',
+            'https://via.placeholder.com/150/0000FF',
+            'https://via.placeholder.com/150/FFFF00',
+            'https://via.placeholder.com/150/FF00FF',
+            'https://via.placeholder.com/150/00FFFF'
+        ];
+
+        const gridContainer = document.getElementById('grid-container');
+
+        function renderImages() {
+            gridContainer.innerHTML = ''; // Clear the container
+            images.forEach((src, index) => {
+                const card = document.createElement('div');
+                card.className = 'image-card';
+                card.innerHTML = `
+                    <img src="${src}" alt="Image ${index + 1}">
+                    <div class="actions">
+                        <button class="button save" onclick="saveImage('${src}')">Save</button>
+                        <button class="button delete" onclick="deleteImage(${index})">Delete</button>
+                    </div>
+                `;
+                gridContainer.appendChild(card);
+            });
+        }
+
+        function saveImage(src) {
+            alert(`Image saved: ${src}`);
+        }
+
+        function deleteImage(index) {
+            images.splice(index, 1);
+            renderImages();
+        }
+
+        // Initial render
+        renderImages();
+    </script>
+
+</body>
+</html>
